@@ -1,0 +1,45 @@
+$maxWidth: 1920;
+$maxWidthContainer: $maxWidth;
+$mobileWidth: 375;
+
+@mixin adaptive-value($property, $startSize, $minSize, $type) {
+    $addSize: $startSize - $minSize;
+
+    @if $type==1 {
+        //Только если меньше контейнера
+        #{$property}: $startSize + px;
+
+        @media (max-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidthContainer - $mobileWidth}));
+        }
+
+        @media (max-width: #{$mobileWidth + px}) {
+            #{$property}: $minSize + px;
+        }
+    }
+
+    @else if $type==2 {
+        //Только если больше контейнера
+        #{$property}: $startSize + px;
+
+        @media (min-width: #{$maxWidthContainer + px}) {
+            #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidth - $mobileWidth}));
+        }
+    }
+
+    @else {
+        //Всегда
+        #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - #{$mobileWidth + px}) / #{$maxWidth - $mobileWidth}));
+    }
+}
+
+// ширина макета (от которой считается vw)
+$viewport-base: $maxWidth;
+
+@function px-to-vw-calc($px, $base: $viewport-base) {
+    @return ($px / $base) * 100vw;
+}
+
+@mixin px-to-vw($property, $size, $min) {
+    #{$property}: max(#{$min}px, px-to-vw-calc($size));
+}

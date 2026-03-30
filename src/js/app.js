@@ -1,0 +1,1 @@
+import "./parts/page-slider.js";

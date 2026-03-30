@@ -1,0 +1,43 @@
+.footer {
+    position: fixed;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    z-index: 10;
+    padding: 20px;
+    border-top: 1px solid rgba($color: $white, $alpha: 0.4);
+
+    // .footer__body
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+
+        div {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+
+            p {
+                color: rgba($color: $white, $alpha: 0.4);
+            }
+
+            a,
+            p {
+                @include px-to-vw('font-size', 14, 14);
+            }
+        }
+    }
+
+    // .footer__animate
+    &__animate {
+        height: 1em;
+        overflow: hidden;
+
+        // .footer__animate-item
+        &-item {
+            transform: translateY(100%);
+        }
+    }
+}

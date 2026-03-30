@@ -1,0 +1,67 @@
+// null default styles
+@import "null";
+// load fonts
+@import "fonts";
+//load variables
+@import "common/variables";
+// load mixins
+@import "mixins";
+// load common
+@import "common/common";
+// load swiper
+@import "../../node_modules/swiper/swiper";
+// load fancybox
+// @import "../../node_modules/@fancyapps/ui/dist/fancybox/fancybox";
+// load choices
+// @import "../../node_modules/choices.js/src/styles/choices";
+// load header
+@import "common/header";
+// load footer
+@import "common/footer";
+// load form
+@import "common/form";
+// load side popup
+@import "common/popup";
+// load footer
+@import "common/menu";
+// load grid
+@import "parts/grid";
+// load cards
+@import "parts/section";
+// load slider
+@import "parts/slider";
+
+.pages {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    background-color: #020202;
+    z-index: 10000;
+    color: #fff;
+    width: fit-content;
+    height: auto;
+    padding: 20px;
+    transform: translate(0, -50%);
+
+    &._hide {
+        transform: translate(-100%, -50%);
+    }
+
+    button {
+        padding: 5px;
+        background-color: #000;
+        margin-bottom: 10px;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        font-size: 20px;
+    }
+
+    a {
+        display: block;
+
+        &:not(:last-child) {
+            margin-bottom: 10px;
+        }
+    }
+}
