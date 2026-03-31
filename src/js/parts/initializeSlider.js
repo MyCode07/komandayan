@@ -597,7 +597,7 @@ export function initializeSlider() {
 
             // Move .slider-toggle-nav down 180px and hide the bottom border just before the animation ends
             gsap.to(".slider-toggle-nav", {
-                bottom: '56px',
+                bottom: '3.5rem',
                 duration: 1.2,
                 ease: "power3.inOut",
                 onStart: function () {

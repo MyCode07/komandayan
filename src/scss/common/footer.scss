@@ -4,20 +4,21 @@
     left: 0;
     bottom: 0;
     z-index: 10;
-    padding: 20px;
+    @include px-to-vw('padding', 20, 20);
     border-top: 1px solid rgba($color: $white, $alpha: 0.4);
+    transition: border-color 0.3s ease 0s;
 
     // .footer__body
     &__body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        gap: 20px;
+        gap: $margin;
 
         div {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: $margin;
 
             p {
                 color: rgba($color: $white, $alpha: 0.4);

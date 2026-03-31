@@ -43,3 +43,5 @@ $viewport-base: $maxWidth;
 @mixin px-to-vw($property, $size, $min) {
     #{$property}: max(#{$min}px, px-to-vw-calc($size));
 }
+
+$margin: max(px-to-vw-calc(20), 20px);
